@@ -18,7 +18,8 @@ session_start();
 <section>
     <div class="feedback">
         <p>Dear Customer,<br>
-        Thank you for visiting our website. We would like to know how we performed. Please spare some moments to give us your valuable feedback as 
+        Thank you for visiting our website. We would like to know how we performed. 
+        Please spare some moments to give us your valuable feedback as 
         it will help us in improving our service.</p>
         <h4>Please rate your experience</h4>
 
@@ -50,7 +51,8 @@ session_start();
         $Review=$_POST['commentText'];
         $CatalogNo=$_SESSION["val"];
         $Type=$_SESSION["type"];
-        $q=$db->prepare("INSERT INTO feedback1 (CatalogNo,Type,Rating,Review) VALUES(:CatalogNo,:Type,:Rating,:Review)");
+        $q=$db->prepare("INSERT INTO feedback1 (CatalogNo,Type,Rating,Review) 
+                                VALUES(:CatalogNo,:Type,:Rating,:Review)");
                    $q->bindValue('CatalogNo',$CatalogNo);
                     $q->bindValue('Type',$Type);
                     $q->bindValue('Rating',$Rating);

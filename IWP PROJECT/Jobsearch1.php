@@ -18,8 +18,8 @@
     <a href="welcome.html" class="logo">QuImpress</a>
         <ul>
             <!--Welcome link will refresh page. Rest will direct to new page-->
-            <li ><a href="welcome.html">Welcome</a></li>
-            <li><a href="AboutUS.html">About Us</a></li>
+            <li ><a href="welcome.php">Welcome</a></li>
+            <li><a href="AboutUS.php">About Us</a></li>
             <li id="Job"><a href="Jobsearch1.php">Job Search</a></li>
             <li><a href="AdminLogin.php">Admin login</a></li>
             <li><a href="UserLogin.php">User login</a></li>

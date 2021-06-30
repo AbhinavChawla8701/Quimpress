@@ -28,7 +28,7 @@ $_SESSION["type"]="CV";
 	<div class="row">
 		<div class="col-sm-3 no-print" id="left">
 			<div id="panel">
-				<form action="/IWP Project/feedback.php">
+				<form action="/Quimpress1/IWP Project/feedback.php ">
 				<button type="submit" class="btn btn-block btn-danger" name="sub" >Logout</button>
 			</form>
 <!-- /Quimpress/IWP Project/feedback.php -->
@@ -42,13 +42,7 @@ $_SESSION["type"]="CV";
 				<h4 class="text-center">Template settings</h4>
 				
 				<button id="customTemplateBtn" class="btn btn-block btn-default" onclick="template();">Use custom template</button>
-				<h5>
-					Semester
-					<div class="toggle-button">
-						<div class="toggle-option" data-toggle="minor" id="minorShow">Show</div>
-						<div class="toggle-option selected" data-toggle="minor" id="minorHide">Hide</div>
-					</div>
-				</h5>
+				
 				<h5>
 					Contact lines
 					<div class="toggle-button">

@@ -42,7 +42,7 @@ include('connection.php');
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="admin.html">
+                <a class="nav-link" href="admin.php">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -68,6 +68,12 @@ include('connection.php');
                 <a class="nav-link" href="tables.php">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Tables</span></a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="search.php">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Search</span></a>
             </li>
 
             <!-- Divider -->
@@ -132,12 +138,7 @@ include('connection.php');
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
-                    <!-- Page Heading -->
-                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                                class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
-                    </div>
+                  
 
                     <!-- Content Row -->
                     <div class="row">
@@ -424,13 +425,8 @@ var myLineChart = new Chart(ctx, {
             {
                 $arr[$r->month-1]=$r->count;
             }
-            
-               
-            
-    ?>
+        ?>
       data: [<?= $arr[0]; ?>,<?= $arr[1]; ?>, <?= $arr[2]; ?>,<?= $arr[3]; ?>, <?= $arr[4]; ?>,<?= $arr[5]; ?>,<?= $arr[6]; ?>, <?= $arr[7]; ?>,<?= $arr[8]; ?>,<?= $arr[9]; ?>,<?= $arr[10]; ?>,<?= $arr[11]; ?>],
-
-      
     }],
   },
   options: {

@@ -17,10 +17,10 @@ $_SESSION["type"]="Portfolio";
 </head>
 <body>
     <!--Iframe to display it-->
-     <form action="/IWP Project/feedback.php">
+     <form action="/Quimpress1/IWP Project/feedback.php">
 				<button type="submit" class="btn btn-danger" style="position: absolute;top:18px;left:1389px"name="sub" >Logout</button>
 			</form>
-<!-- /Quimpress/IWP Project/feedback.php -->
+<!--/Quimpress1/IWP Project/feedback.php-->
     <iframe src="https://www.jdoodle.com/h/1ge" frameborder="0" width="1500" height="700">
     </iframe>
 </body>

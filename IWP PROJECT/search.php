@@ -1,6 +1,5 @@
 <?php 
 include('connection.php');
-
  ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -61,11 +60,13 @@ include('connection.php');
                     <i class="fas fa-fw fa-table"></i>
                     <span>Tables</span></a>
             </li>
+            <!-- Nav Item - Tables -->
             <li class="nav-item active">
                 <a class="nav-link" href="search.php">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Search</span></a>
             </li>
+
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
@@ -136,6 +137,10 @@ include('connection.php');
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
+                                <form method="post">
+                                    Search By Type: <input type="text" name="Type" width="200px"> &nbsp; <BUTTON type="submit" name="searchType">Search</BUTTON> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    Search By Date: <input type="date" name="Date" width="200px"> &nbsp; <BUTTON type="submit" name="searchDate">Search</BUTTON>
+                                </form>
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <tr>
                                         <td><center><b>User ID</b></center></td>
@@ -147,7 +152,9 @@ include('connection.php');
                                         
                                     </tr>
                                     <?php
-                                    $q=$db->query("SELECT * FROM signup1 INNER JOIN user_signin1 ON signup1.UID=user_signin1.UserID");
+                                    if(isset($_POST['searchType'])){
+                                        $Type=$_POST['Type'];
+                                    $q=$db->query("SELECT * FROM signup1 INNER JOIN user_signin1 ON signup1.UID=user_signin1.UserID WHERE Type='$Type'");
                                     while($r=$q->fetch(PDO::FETCH_OBJ))
                                     {
                                       ?>
@@ -161,6 +168,26 @@ include('connection.php');
                                     </tr>
                                     <?php
                                  }
+                             }
+                                 ?>
+                                 <?php
+                                    if(isset($_POST['searchDate'])){
+                                        $Date=$_POST['Date'];
+                                    $q=$db->query("SELECT * FROM signup1 INNER JOIN user_signin1 ON signup1.UID=user_signin1.UserID WHERE date(Time) = '$Date'");
+                                    while($r=$q->fetch(PDO::FETCH_OBJ))
+                                    {
+                                      ?>
+                                    <tr>
+                                        <td><center><?=$r->UID; ?></center></td>
+                                        <td><center><?=$r->FirstName; ?></center></td>
+                                        <td><center><?=$r->LastName; ?></center></td>
+                                        <td><center><?=$r->Email; ?></center></td>
+                                        <td><center><?=$r->Time; ?></center></td>
+                                        <td><center><?=$r->Type; ?></center></td>
+                                    </tr>
+                                    <?php
+                                 }
+                             }
                                  ?>
                                 </table>
                             </div>

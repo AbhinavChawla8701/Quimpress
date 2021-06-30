@@ -19,8 +19,8 @@ session_start();
             <a href="welcome.html" class="logo">Qu-Impress</a>                
             <ul>                    
                 <!--Welcome link will refresh page. Rest will direct to new page-->                    
-                <li><a href="welcome.html">Welcome</a></li>                    
-                <li><a href="AboutUS.html">About Us</a></li>                    
+                <li><a href="welcome.php">Welcome</a></li>                    
+                <li><a href="AboutUS.php">About Us</a></li>                    
                 <li><a href="Jobsearch1.php">Job Search</a></li>                    
                 <li><a href="welcome.html">Logout</a></li>                    
                                
@@ -46,7 +46,7 @@ session_start();
         <!--First item in catalouge. Click the image to direct to preview and code for item-->
         <img src="section1.jpeg" alt="" class="img1">
         <div class="title1 box">
-            <button onclick="document.location='portfolio2.html'" class="preview" >Preview</button>
+            <button onclick="document.location='portfolio2.php'" class="preview" >Preview</button>
             
             <form method="POST" name="form1">
             <button type="submit" class="customize" name="sub">Customize</button>
@@ -63,7 +63,7 @@ session_start();
         <!--Second item in catalouge. Click the image to direct to preview and code for item-->
         <img src="section2.jpg" alt="" class="img2">
         <div class="title2 box">
-            <button onclick="document.location='portfolio.html'" class="preview" >Preview</button>
+            <button onclick="document.location='portfolio.php'" class="preview" >Preview</button>
             <form method="POST" name="form2">
             <button type="submit" class="customize" name="sub1">Customize</button>
             </form>

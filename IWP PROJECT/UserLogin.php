@@ -77,7 +77,8 @@ if(isset($_POST['sub']))
             $UserID=$_POST['us'];
             $Password=$_POST['psw'];
 
-            $q=$db->prepare("INSERT INTO signup1 (FirstName,LastName,Email,DOB,UID,Pass) VALUES(:Fn,:Ln,:email,:DOB,:us,:psw)");
+            $q=$db->prepare("INSERT INTO signup1 (FirstName,LastName,Email,DOB,UID,Pass)
+                                VALUES(:Fn,:Ln,:email,:DOB,:us,:psw)");
             $q->bindValue('Fn',$FName);
             $q->bindValue('Ln',$LName);
             $q->bindValue('DOB',$DOB);
